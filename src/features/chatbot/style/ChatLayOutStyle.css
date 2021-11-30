@@ -1,0 +1,12 @@
+
+.Chatcontainer{
+
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: 200px 500px 200px;
+  
+}
+
+.item13{/*챗봇*/
+    grid-column: 2;
+}

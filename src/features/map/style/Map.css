@@ -1,0 +1,26 @@
+
+.Mapcontainer{    
+    display: grid;
+    grid-template-columns: 200px 1fr 200px; 
+    grid-template-rows: 150px 1fr 535px;
+    justify-content: center
+}
+
+.Options{/*옵션*/
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.LocalMap{/*맵*/
+    grid-column: 2/ 5;
+    grid-row: 3;
+}
+
+
+.LocalMapInfo{/*맵인포*/
+    grid-column: 2/ 5;
+    grid-row: 4;
+    
+}
+
+

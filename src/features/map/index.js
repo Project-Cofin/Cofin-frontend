@@ -7,3 +7,7 @@ export { default as MapLayOut } from 'features/map/components/MapLayOut'
 
 export { default as LocalMapPage } from 'features/map/pages/LocalMapPage'
 export { default as WorldMapPage } from 'features/map/pages/WorldMapPage'
+
+export { default as map } from 'features/map/reducer/mapSlice'
+
+export { default as mapAPI } from 'features/map/reducer/mapAPI'

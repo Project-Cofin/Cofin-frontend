@@ -1,23 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { WorldMap } from 'react-svg-worldmap';
 import styled from 'styled-components';
+import { worldMap } from "features/map/reducer/mapSlice";
 
 export default function World() {
-    const data =
-    [
-      { country: "in", value: 32857937 }, // india
-      { country: "us", value: 40330712 },  // united states
-      { country: "br", value: 20804215 },  // brazil
-      { country: "ru", value: 6937333 },  // russia
-      { country: "gb", value: 6825074 },   // UK
-      { country: "fr", value: 6783329 },   // france
-      { country: "tr", value: 6412277 },   // turkey
-      { country: "ar", value: 5190948 },   // Argentina
-      { country: "ir", value: 5025233 },   // Iran
-      { country: "co", value: 4911082 },   // Colombia
-
-      { country: "kr", value: 255401 }   // korea
-    ]
+    const maps = useSelector(state => state.map.mapsState)
+    const dispatch = useDispatch()
+    useEffect(()=>{
+      dispatch(worldMap())
+    },[])
 
     const stylingFunction = ({
         countryValue,
@@ -26,8 +18,7 @@ export default function World() {
         country,
         color,
       }) => {
-        const opacityLevel =
-          0.1 + (1.5 * (countryValue - minValue)) / (maxValue - minValue);
+        const opacityLevel = 0.1 + (1.0 * (countryValue - minValue)) / (maxValue - minValue);
         return {
           // fill: country === 'US' ? 'blue' : color,
           fill: countryValue < 300000 ? 'green' : color,
@@ -41,9 +32,11 @@ export default function World() {
 
     return (<>
         <WorldMapDiv className="App" >
-            <WorldMap color="red" title="Top 10 Coronavirus Rates" value-suffix="people" size="xxl" data={data} frame={true} styleFunction={stylingFunction} />
+            <WorldMap color="red" title="Top 10 Coronavirus Rates" value-suffix="people" size="xxl" 
+            data={maps.map(x => {return {country: x.meta, value: parseInt(x.cases)}})} 
+            frame={true} styleFunction={stylingFunction} />
         </WorldMapDiv>
-    </>)
+    </>) 
 }
 
 const WorldMapDiv = styled.div`

@@ -6,7 +6,7 @@ import styled from "styled-components";
 function Login(){
     return (
         <div className="Login">
-            <Navbar style={{marginLeft:"770px"}} bg="primary" variant="dark">
+            <Navbar style={{marginLeft:"650px"}} bg="primary" variant="dark">
             <Nav className="mr-auto" >
                 <Li type='none'>
                     <label for="user-id"/>아이디 &nbsp;

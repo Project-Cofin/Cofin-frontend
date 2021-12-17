@@ -22,7 +22,7 @@ return (
                     <Link className="NavLink2" to= "/organ/local">국내지도</Link>
                     <Link className="NavLink2" to= "/organ/world">세계지도</Link>
                 </NavDropdown>
-            &emsp;<Link className="NavLink" to= "/organ/chat">챗봇</Link>
+            
                 
             &emsp;<Link className="NavLink" to="/main/corona">코로나</Link>
                 
@@ -31,7 +31,7 @@ return (
                     <Link className="NavLink2"to= "/message">재난문자</Link>
                     <Link className="NavLink2"to= "/news">뉴스</Link>
                 </NavDropdown>
-            
+            &emsp;<Link className="NavLink" to= "/organ/chat">챗봇</Link>
             
             </Nav>
         </Navbar>

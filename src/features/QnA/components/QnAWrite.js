@@ -6,13 +6,17 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { LayOut } from "features/common";
 import ReactHtmlParser from 'react-html-parser'
 import Axios from 'axios';
+import { Link } from "react-router-dom";
+import  { useNavigate} from 'react-router-dom'; 
 
 
-function QnAWrite (){
+function QnAWrite(){   
+    const navigate = useNavigate();
+
     const [QnAContent, setQnAContent] = useState({
         title: '',
         content: ''
-    })
+    })               
 
     const [viewContent, setViewContent] = useState([]);
 
@@ -26,9 +30,13 @@ function QnAWrite (){
         Axios.post('http://localhost:8000/api/insert', {
             title: QnAContent.title,
             content: QnAContent.content
-        }).then(()=> {
-            alert('등록 완료');
-        })
+        }).then( resp => {
+            alert('글쓰기 성공')
+            navigate.push('/QnA')
+            })
+            .catch(err => {
+            alert('글쓰기 실패')
+            })
     };
 
     const getValue = e => {
@@ -37,7 +45,11 @@ function QnAWrite (){
             ...QnAContent,
             [name]: value
         })
+    
+    
     };
+
+
     return(
     <LayOut>
         {viewContent.map(element => 
@@ -90,15 +102,22 @@ function QnAWrite (){
                                        
                     
                     </CKEditor>
+                    
                     <Button className="submit-button" type="submit"
                     onClick={submitQnA}>입력</Button>
+                   
+
+                    <Link to="/QnA" >
+                        <button className="submit-button" type="submit"
+                        onClick={submitQnA} Link to="/write" >취소</button>
+                    </Link>
                 </div>         
             </Table><br/>
         </div>
     </LayOut>
 )}
 
-export default QnAWrite
+export default QnAWrite;
 
 const Table = styled.table`
     text-decoration: none;

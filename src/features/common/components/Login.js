@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {Navbar, Nav} from 'react-bootstrap';
 import styled from "styled-components";
 import 'features/common/style/NaviStyle.css'
@@ -7,17 +8,11 @@ import 'features/common/style/NaviStyle.css'
 function Login(){
     return (
         <div className="Login">
-            <Navbar style={{marginLeft:"650px"}} bg="primary" variant="dark">
+            <Navbar style={{marginLeft:"900px"}} bg="primary" variant="dark">
             <Nav className="mr-auto" >
-                <li type='none'>
-                    <label for="user-id"/>아이디 &nbsp;
-                    <input type="text" id="user-id"/>&nbsp; 
-                
-                    <label for="pwd1"/> 비밀번호 &nbsp;
-                    <input type="password" id="pwd"/>&nbsp;
-                    
-                    <input type="submit" value="로그인"/>&nbsp;
-                </li>
+                    <Link to="/user">                        
+                        <Button class="btn btn-outline-secondary">로그인</Button>                        
+                    </Link>
             </Nav>
             </Navbar>
         </div>
@@ -26,4 +21,6 @@ function Login(){
 
 export default Login;
 
-
+const Button = styled.button`
+    background-color:white;
+`

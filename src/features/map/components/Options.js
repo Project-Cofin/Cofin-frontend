@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import { casesPoints, medPoints } from "../reducer/mapSlice";
+import { casesPoints, medPoints } from "features/map/reducer/mapSlice";
 
 
 export default function Options() {
@@ -27,7 +27,6 @@ export default function Options() {
     </OptionUl>
     </>)
 }
-
 
 const OptionUl = styled.ul`
     list-style: none;

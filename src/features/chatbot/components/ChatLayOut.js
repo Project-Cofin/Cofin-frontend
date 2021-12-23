@@ -12,7 +12,7 @@ const ChatLayOut = (props) => {
       <div class="Chatcontainer">
         <span className="header"><Header/></span>  
 
-        <span class ="item13"><Chat/>챗봇</span>
+        <span class ="item13"><Chat/></span>
         
         <span class ="Footer"><Footer/></span>
       </div>

@@ -10,7 +10,7 @@ function Login(){
         <div className="Login">
             <Navbar style={{marginLeft:"900px"}} bg="primary" variant="dark">
             <Nav className="mr-auto" >
-                    <Link to="/user">                        
+                    <Link to="/login">                        
                         <Button class="btn btn-outline-secondary">로그인</Button>                        
                     </Link>
             </Nav>

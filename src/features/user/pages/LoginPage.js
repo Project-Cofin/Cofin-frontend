@@ -13,7 +13,7 @@ export default function LoginPage(){
             <br/><br/>
             <li><UserLogin/></li>
             <br/><br/>
-            <li><a href="/join">회원 가입</a></li>
+            <li><a href="/user">회원 가입</a></li>
             <br/><br/></ul>
         
         </div>

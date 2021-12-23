@@ -1,0 +1,16 @@
+.NavLink{
+    
+    color: #A9BCF5;
+    text-decoration: none;
+    margin: 8px 0px 0px 0px;
+
+}
+
+.NavLink2{
+    display: block;
+    color : #0d6efd;
+    text-decoration: none;
+    margin: 5px 0px 5px 10px;
+    font-weight: bold;
+
+}

@@ -2,7 +2,7 @@ import {Route, Routes} from 'react-router-dom';
 import axios from 'axios';
 //21-11-06 v6로 버전업이후 switch -> routes / component -> element= {<Home/>}/>
 
-import { LocalMapPage, WorldMapPage } from 'features/map';
+import { Geolocation, LocalMapPage, WorldMapPage } from 'features/map';
 import { QnABoardPage, QnAWritePage } from 'features/QnA/index';
 
 import MedptPage from "features/medpt/MedptPage";

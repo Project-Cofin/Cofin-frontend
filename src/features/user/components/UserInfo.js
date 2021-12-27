@@ -55,7 +55,7 @@ export default function UserInfo(){
     const { errors, touched, handleSubmit, isSubmitting, getFieldProps } = formik;
 
     return(
-        <div align="center" style={{ display: "inline-block" }}>
+        <div align="center" style={{ display: "inline-block" , marginLeft:"300px"}}>
             <h1>회원 정보</h1>
             {/* shows all user info, with boxes for editables: */}
             <FormikProvider value={formik}>

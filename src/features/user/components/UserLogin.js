@@ -46,7 +46,7 @@ export default function LoginForm() {
   };
 
   return (
-    <div align="center" style={{ display: "inline-block" }}>
+    <div align="center" style={{ display: "inline-block", marginLeft:"200px", width: "800px" }}>
       <h1><b>로그인</b></h1>
     <FormikProvider value={formik}>
       <Form autoComplete="off" noValidate onSubmit={handleSubmit}>

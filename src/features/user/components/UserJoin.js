@@ -91,7 +91,7 @@ export default function RegisterForm() {
   const { errors, touched, isSubmitting, getFieldProps } = formik;
 
   return (
-    <div align="center" style={{ display: "inline-block" }}>
+    <div align="center" style={{ display: "inline-block"}}>
       <h1><b>회원 가입</b></h1>
     <FormikProvider value={formik}>
       <Form autoComplete="off" noValidate onSubmit={handleSubmit}>

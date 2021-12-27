@@ -6,7 +6,7 @@ import { LayOut } from 'features/common'
 export default function UserPage(){
     return(
     <LayOut>
-        <div align="center" style={{ display: "inline-block" }}>
+        <div align="center" style={{ display: "inline-block"}}>
             
             <ul type='none'>
             <li><UserInfo/></li>

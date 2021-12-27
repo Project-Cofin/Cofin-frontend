@@ -5,18 +5,18 @@ import { EventMarkerContainer } from '..';
 import { medPoints } from '../reducer/mapSlice';
 
 
-
 export default function LocalMap() {
     const geoInfo = window.localStorage.getItem('sessionGeo').split(',')
     const [isOpen, setIsOpen] = useState(false)
     const [map, setMap] = useState()
     let points = useSelector(state => state.map.mapsState.map(
         x => {return {content: <div style={{ padding: "5px", color: "#000" }}>{x.name}</div>,
-                      latlng: {lat: x.latitude, lng:x.longitude}}}
+                      latlng: {lat: x.latitude, lng:x.longitude},
+                      id: x.med_point.split(']')[0].substr(1)
+                    }}
     )) 
     const dispatch = useDispatch()
     useEffect(()=>{ dispatch(medPoints({'latitude': geoInfo[0], 'longitude': geoInfo[1]})) },[])
-
     return(<>
     <Map
           center={{
@@ -56,6 +56,7 @@ export default function LocalMap() {
                 key={`EventMarkerContainer-${value.latlng.lat}-${value.latlng.lng}`}
                 position={value.latlng}
                 content={value.content}
+                id={value.id}
               />
             ))}
         </Map>

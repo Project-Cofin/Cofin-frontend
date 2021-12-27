@@ -1,10 +1,13 @@
 import React, { useState } from "react"
 import { MapMarker, useMap } from "react-kakao-maps-sdk"
+import { useDispatch } from "react-redux"
+import { medPoint } from "../reducer/mapSlice"
 
-export default function EventMarkerContainer({ position, content }) {
+export default function EventMarkerContainer({ position, content, id }) {
     const map = useMap()
     const [isVisible, setIsVisible] = useState(false)
-  
+    const dispatch = useDispatch()
+
     return (
       <MapMarker
         position={position}
@@ -22,7 +25,7 @@ export default function EventMarkerContainer({ position, content }) {
           },
         }}
         onClick={(marker) => {
-          console.log(content)
+          dispatch(medPoint(id))
           map.panTo(marker.getPosition())}}
         onMouseOver={() => setIsVisible(true)}
         onMouseOut={() => setIsVisible(false)}

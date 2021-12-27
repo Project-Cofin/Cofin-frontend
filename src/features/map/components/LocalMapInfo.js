@@ -1,17 +1,22 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 const LocalMapInfo = () => {
-
+    const info = useSelector(state => state.map.mapState )
     return(<>
-
-        <InfoUl>
-            <li>
-                <InfoDiv>
-                    <div><label>진료소 A</label></div>
-                </InfoDiv>
-            </li>
-        </InfoUl>
+        {
+            info.name == '' ? 
+            <></> :
+            <InfoUl>
+                <li>
+                    <InfoDiv>
+                        <h1>{info.name}</h1>
+                        <label>{info.meta}</label>
+                    </InfoDiv>
+                </li>
+            </InfoUl>
+        }
 
     </>)
 }
@@ -22,7 +27,6 @@ const InfoDiv = styled.div`
 
     width: 1300px;
     height: 300px;
-    border: solid 1px black;
     display: inline-block;
 `
 

@@ -12,7 +12,7 @@ export default function LocalMap() {
     let points = useSelector(state => state.map.mapsState.map(
         x => {return {content: <div style={{ padding: "5px", color: "#000" }}>{x.name}</div>,
                       latlng: {lat: x.latitude, lng:x.longitude},
-                      id: x.med_point.split(']')[0].substr(1)
+                      id: x.med_point != null ? x.med_point.split(']')[0].substr(1) : "None"
                     }}
     )) 
     const dispatch = useDispatch()
@@ -35,7 +35,7 @@ export default function LocalMap() {
             // title='현재 위치'
             image={{
                 // 무료 마커이미지의 주소: https://www.flaticon.com/kr/
-                src: "https://cdn-icons.flaticon.com/png/512/5693/premium/5693914.png?token=exp=1637741898~hmac=fada3fe37d0197cf397c5d7713400e95", 
+                src: "https://cdn-icons.flaticon.com/png/512/5693/premium/5693914.png?token=exp=1640587515~hmac=1234404984d3e1388e9daad40f350dce", 
                 size: {
                   width: 45,
                   height: 45,

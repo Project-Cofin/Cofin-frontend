@@ -12,7 +12,7 @@ export default function EventMarkerContainer({ position, content, id }) {
       <MapMarker
         position={position}
         image={{
-          src: "https://cdn-icons.flaticon.com/png/512/5693/premium/5693879.png?token=exp=1637741898~hmac=59a8cfd836c546dab8091bb296ba21aa", 
+          src: "https://cdn-icons.flaticon.com/png/512/5693/premium/5693879.png?token=exp=1640587315~hmac=9161899b9351e0422b3e88a9cd838671", 
           size: {
             width: 45,
             height: 45,
@@ -25,7 +25,7 @@ export default function EventMarkerContainer({ position, content, id }) {
           },
         }}
         onClick={(marker) => {
-          dispatch(medPoint(id))
+          if (id != "None") dispatch(medPoint(id))
           map.panTo(marker.getPosition())}}
         onMouseOver={() => setIsVisible(true)}
         onMouseOut={() => setIsVisible(false)}

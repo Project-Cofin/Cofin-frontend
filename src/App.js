@@ -17,7 +17,7 @@ import ChatbotPage from 'features/chatbot/pages/ChatbotPage';
 function App() {
 
   return(<>
-
+    <Geolocation/>
     <Routes>
 
           <Route path="/" element= { <ChartPage/> }/>

@@ -7,6 +7,7 @@ import { casesPoints, medPoints } from "features/map/reducer/mapSlice";
 export default function Options() {
     const dispatch = useDispatch()
     var geoInfo = window.localStorage.getItem('sessionGeo').split(',')
+    // alert(geoInfo)
     return(<>
     <OptionUl>
         <li>

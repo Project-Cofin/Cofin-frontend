@@ -1,5 +1,5 @@
 import axios from "axios"
-const SERVER = 'http://127.0.0.1:8000/api/map'
+const SERVER = 'http://127.0.0.1:8001/api/map'
 const headers = {
   'Content-Type': 'application/json',
   'Authorization': 'JWT fefege..'

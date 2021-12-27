@@ -1,7 +1,8 @@
 import { Map, MapMarker } from 'react-kakao-maps-sdk';
-import React, {useState} from "react";
-import { useSelector } from 'react-redux';
+import React, {useEffect, useState} from "react";
+import { useDispatch, useSelector } from 'react-redux';
 import { EventMarkerContainer } from '..';
+import { medPoints } from '../reducer/mapSlice';
 
 
 
@@ -13,6 +14,8 @@ export default function LocalMap() {
         x => {return {content: <div style={{ padding: "5px", color: "#000" }}>{x.name}</div>,
                       latlng: {lat: x.latitude, lng:x.longitude}}}
     )) 
+    const dispatch = useDispatch()
+    useEffect(()=>{ dispatch(medPoints({'latitude': geoInfo[0], 'longitude': geoInfo[1]})) },[])
 
     return(<>
     <Map

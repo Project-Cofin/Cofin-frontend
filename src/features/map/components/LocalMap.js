@@ -35,7 +35,7 @@ export default function LocalMap() {
             // title='현재 위치'
             image={{
                 // 무료 마커이미지의 주소: https://www.flaticon.com/kr/
-                src: "https://cdn-icons.flaticon.com/png/512/5693/premium/5693914.png?token=exp=1640596397~hmac=f840c4931c45ce95c0c41f436359ac05", 
+                src: "https://cdn-icons.flaticon.com/png/512/5693/premium/5693914.png?token=exp=1640744173~hmac=5f68502ee432a4e90af0d717a89536a8", 
                 size: {
                   width: 45,
                   height: 45,

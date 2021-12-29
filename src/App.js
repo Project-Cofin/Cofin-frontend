@@ -3,7 +3,7 @@ import axios from 'axios';
 //21-11-06 v6로 버전업이후 switch -> routes / component -> element= {<Home/>}/>
 
 import { Geolocation, LocalMapPage, WorldMapPage } from 'features/map';
-import { QnABoardPage, QnAWritePage } from 'features/QnA/index';
+import { QnABoardPage, QnAViewPage, QnAWritePage } from 'features/QnA/index';
 
 import MedptPage from "features/medpt/MedptPage";
 import {MsgPage} from "features/message/index";
@@ -26,6 +26,7 @@ function App() {
 
 
           <Route path="/QnA" element={<QnABoardPage/>}/>
+          <Route path="/QnA/view" element={<QnAViewPage/>}/>
           <Route path="/write" element={<QnAWritePage/>}/>
           <Route path="/organ/chat" element={<ChatbotPage/>}/>
           <Route path="/organ/local" element={<LocalMapPage/>}/>

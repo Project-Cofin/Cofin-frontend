@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const QnAList = () => {
     const getQnA = () => { // 영화 정보를 반환하는 함수
       const QnA = [
-        { no: "1", title: "질문 1", writer: "띠리빠바", date: "2019-07-17", review: "5"},
+        { no: "1", title: <Link to="/QnA/view">질문 거리 하나</Link>, writer: "띠리빠바", date: "2019-07-17", review: "5"},
         { no: "2", title: "질문 2", writer: "아모르파뤼", date: "2019-07-17", review: "5"},
         { no: "3", title: "신고 1", writer: "십센티", date: "2019-07-17", review: "5"},
         { no: "4", title: "질문 3", writer: "뿌바라", date: "2019-07-17", review: "5"},

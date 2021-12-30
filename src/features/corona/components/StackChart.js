@@ -27,9 +27,7 @@ export default function StackChart (x){
     return (
       <div>
         <span>
-        {selection.length ? data[selection[0].point].label : undefined}:
-          {' '}
-          {selection.length ? data[selection[0].point].value*100 : undefined}
+          {selection.length ? `${data[selection[0].point].label} : ${data[selection[0].point].value*100}` : undefined}
         </span>
         <Paper>
           <Chart

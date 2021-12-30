@@ -306,7 +306,8 @@ export const born = [
   
   export const energyConsumption = [
     {
-      country: 'USA', hydro: 59.8, oil: 937.6, gas: 582, coal: 564.3, nuclear: 187.9,
+      country: 'USA', hydro: 74.2, oil: 308.6, gas: 35.1, coal: 956.9, nuclear: 11.3,
+    }, {
     }, {
       country: 'China', hydro: 74.2, oil: 308.6, gas: 35.1, coal: 956.9, nuclear: 11.3,
     }, {

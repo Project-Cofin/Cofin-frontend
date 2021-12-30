@@ -1,104 +1,52 @@
 import * as React from 'react';
+import Paper from '@material-ui/core/Paper';
 import {
-  Chart,
   ArgumentAxis,
   ValueAxis,
+  Chart,
   LineSeries,
-  Title,
-  Legend,
-} from '@devexpress/dx-react-chart-bootstrap4';
-import { ArgumentScale, Animation } from '@devexpress/dx-react-chart';
-import {
-  curveCatmullRom,
-  line,
-} from 'd3-shape';
-import { scalePoint } from 'd3-scale';
+} from '@devexpress/dx-react-chart-material-ui';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getConfirmed } from '../reducer/coronaSlice';
 
-import { energyConsumption as data } from '../demo-data/data-vizualization';
-
-const Line = props => (
-  <LineSeries.Path
-    {...props}
-    path={line()
-      .x(({ arg }) => arg)
-      .y(({ val }) => val)
-      .curve(curveCatmullRom)}
-  />
-);
-
-const Text = (props) => {
-  const { text } = props;
-  const [mainText, subText] = text.split('\\n');
-  return (
-    <div className="w-100 text-center mb-2">
-      <h3>
-        {mainText}
-      </h3>
-      <p>{subText}</p>
-    </div>
-  );
-};
-const Root = props => (
-  <Legend.Root
-    {...props}
-    className="m-auto flex-row"
-  />
-);
-const Item = props => (
-  <Legend.Item
-    {...props}
-    className="flex-column-reverse"
-  />
-);
-const Label = props => (
-  <Legend.Label
-    {...props}
-    className="pb-2"
-  />
-);
-
-export default class HeaderChart extends React.PureComponent {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      data,
-    };
-  }
-
-  render() {
-    const { data: chartData } = this.state;
+export default function HeaderChart(){
+  const dispatch = useDispatch()
+  const data = useSelector(state => state.corona.confirmedState)
+  const labelHalfWidth = 50;
+  let lastLabelCoordinate;
+  const ArgumentLabel = (props) => {
+    const { x } = props;
+    // filter Labels
+    if (
+      lastLabelCoordinate &&
+      lastLabelCoordinate < x &&
+      x - lastLabelCoordinate <= labelHalfWidth
+    ) {
+      return null;
+    }
+    lastLabelCoordinate = x;
+    return <ArgumentAxis.Label {...props} />;
+  };
+  
+  useEffect(()=>{
+    dispatch(getConfirmed())
+  },[])
 
     return (
-      <div className="card">
+      <Paper>
         <Chart
-          data={chartData}
-          className="pr-4"
+          data={data} 
         >
-          <ArgumentScale factory={scalePoint} />
-          <ArgumentAxis />
+          <ArgumentAxis labelComponent={ArgumentLabel}/>
           <ValueAxis />
 
           <LineSeries
-            name="결과"
-            valueField="hydro"
-            argumentField="country"
-            seriesComponent={Line}
+            name="line"
+            valueField="lineValue"
+            argumentField="argument"
           />
-          <LineSeries
-            name="예상치"
-            valueField="oil"
-            argumentField="country"
-            seriesComponent={Line}
-          />
-          <Legend position="bottom" rootComponent={Root} itemComponent={Item} labelComponent={Label} />
-          <Title
-            text="Energy Consumption in 2004\n(Millions of Tons, Oil Equivalent)"
-            textComponent={Text}
-          />
-          <Animation />
         </Chart>
-      </div>
+      </Paper>
     );
   }
-}

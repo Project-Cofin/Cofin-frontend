@@ -1,80 +1,51 @@
 import * as React from 'react';
+import Paper from '@material-ui/core/Paper';
 import {
   Chart,
+  BarSeries,
   ArgumentAxis,
   ValueAxis,
-  BarSeries,
-  Title,
-  Legend,
-} from '@devexpress/dx-react-chart-bootstrap4';
-import { Stack, Animation } from '@devexpress/dx-react-chart';
+} from '@devexpress/dx-react-chart-material-ui';
 
-import { energyConsumption as data } from '../demo-data/data-vizualization';
+import { EventTracker, SelectionState } from '@devexpress/dx-react-chart';
+import { useState } from 'react';
 
-const Root = props => (
-  <Legend.Root
-    {...props}
-    className="m-auto flex-row"
-  />
-);
 
-export default class StackChart extends React.PureComponent {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      data,
+export default function StackChart (x){
+  const [ selection, setSelection] = useState([])
+  const data = x.param.slice(0, -1)
+  const compare = (
+    { series, point }, { series: targetSeries, point: targetPoint },
+  ) => series === targetSeries && point === targetPoint;
+  const toggle = ({ targets }) => {
+      const target = targets[0];
+    if (target) {
+      setSelection((selection.length > 0) && compare(selection[0], target) ? [] : [target])
+      }
     };
-  }
-
-  render() {
-    const { data: chartData } = this.state;
 
     return (
-      <div className="card">
-        <Chart
-          data={chartData}
-        >
-          <ArgumentAxis />
-          <ValueAxis
-            max={2400}
-          />
+      <div>
+        <span>
+        {selection.length ? data[selection[0].point].label : undefined}:
+          {' '}
+          {selection.length ? data[selection[0].point].value*100 : undefined}
+        </span>
+        <Paper>
+          <Chart
+            data={data}
+          >
+            <ArgumentAxis />
+            <ValueAxis />
 
-          <BarSeries
-            name="Hydro-electric"
-            valueField="hydro"
-            argumentField="country"
-          />
-          <BarSeries
-            name="Oil"
-            valueField="oil"
-            argumentField="country"
-          />
-          <BarSeries
-            name="Natural gas"
-            valueField="gas"
-            argumentField="country"
-          />
-          <BarSeries
-            name="Coal"
-            valueField="coal"
-            argumentField="country"
-          />
-          <BarSeries
-            name="Nuclear"
-            valueField="nuclear"
-            argumentField="country"
-          />
-          <Animation />
-          <Legend position="bottom" rootComponent={Root} />
-          <Title text="Energy Consumption in 2004 (Millions of Tons, Oil Equivalent)" />
-          <Stack
-            stacks={[
-              { series: ['Hydro-electric', 'Oil', 'Natural gas', 'Coal', 'Nuclear'] },
-            ]}
-          />
-        </Chart>
+            <BarSeries
+              valueField="value"
+              argumentField="label"
+            />
+            <EventTracker onClick={toggle} />
+            <SelectionState selection={selection} />
+          </Chart>
+        </Paper>
       </div>
     );
   }
-}

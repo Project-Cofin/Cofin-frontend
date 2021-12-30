@@ -1,13 +1,15 @@
-import { LayOut } from 'features/common';
+import { ViewLayout } from '..';
 import React from 'react';
-import QnAView from '../components/QnAView';
+import QnAComment from 'features/QnA/components/QnAComment';
+import QnAView from 'features/QnA/components/QnAView';
  
-const QnAViewPage = props => {
+const QnAViewPage = (props) => {
   return (
     <>
-    <LayOut>
+    <ViewLayout>
       <QnAView/>
-    </LayOut>
+      <QnAComment/>
+    </ViewLayout>
     </>
   )
 }

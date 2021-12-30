@@ -1,3 +1,4 @@
+
 .view_comment{
     position: relative;
 }
@@ -23,14 +24,15 @@
     color: black;
 }
 
-.comment_count .num_box {
-    width: 50%;
-}
-
 .comment_count{
     height: 38px;
     line-height: 38px;
     font-weight: bold;    
+}
+
+.comment_count 
+.num_box {
+    width: 50%;
 }
 
 .comment_count .select_box.array_latest {
@@ -50,9 +52,17 @@
 select {
     word-wrap: normal;
 }
-.array_latest .select_area {
+.array_latest 
+.select_area {
     font-weight: normal;
-    font-family: -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",arial,Dotum,돋움,sans-serif;
+    font-family: -apple-
+                system,BlinkMacSystemFont,"Apple SD Gothic Neo",
+                "Malgun Gothic","맑은 고딕",arial,Dotum,돋움,sans-serif;
+}
+
+.select_box {
+    position: relative;
+    float: left;
 }
 
 .select_box.array_latest{
@@ -128,15 +138,18 @@ select {
     padding-inline-start: 40px;
 }
 
-.cmt_list li:first-child .cmt_info{
-    border-top:none;
-}
-
-.view_comment .cmt_info {
-    padding: 9px 3px 7px 3px;
-}
 .cmt_info {
     position: relative;
+}
+
+.view_comment 
+.cmt_info {
+    padding: 9px 3px 7px 3px;
+}
+
+.cmt_list li:first-child 
+.cmt_info{
+    border-top:none;
 }
 
 .cmt_nickbox{
@@ -193,17 +206,18 @@ select {
     position: relative;
     font-size: 13px;
 }
-.comment_box .nickname.in > em {
+.comment_box 
+.nickname.in > em {
     max-width: 110px;
     padding-right: 1px;
 }
-.comment_box .nickname {
-    font-size: 12px;
-    color: #777;
+.comment_box 
+.nickname {  
     vertical-align: top;
 }
 
-.comment_box .nickname > em {
+.comment_box 
+.nickname > em {
     display: inline-block;
     max-width: 84px;
     text-overflow: ellipsis;

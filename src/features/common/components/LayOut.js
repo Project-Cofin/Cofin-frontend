@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Header from 'features/common/components/Header'
 import Footer from 'features/common/components/Footer'
-import styled from "styled-components";
 import 'features/common/style/LayOutStyle.css'
 
 const LayOut = (props) => {

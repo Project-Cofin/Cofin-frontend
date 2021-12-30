@@ -1,7 +1,8 @@
 import React from 'react'
 import {UserLogin,UserLost,UserJoin} from 'features/user'
+import { Button } from '@mui/material'
 import { LayOut } from 'features/common'
-
+import { Link } from "react-router-dom";
 
 export default function LoginPage(){
     return(
@@ -13,7 +14,15 @@ export default function LoginPage(){
             <br/><br/>
             <li><UserLogin/></li>
             <br/><br/>
-            <li><a href="/user">회원 가입</a></li>
+            <Link to="/user" style={{ display: "inline-block", marginLeft:"200px", width: "800px" }}>
+                <Button
+                fullWidth                
+                size="large"          
+                variant="contained"
+                >          
+                회원가입          
+                </Button>
+            </Link>
             <br/><br/></ul>
         
         </div>

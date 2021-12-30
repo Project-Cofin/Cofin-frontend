@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
 import * as Yup from 'yup';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
+
 import { useFormik, Form, FormikProvider } from 'formik';
 import { Icon } from '@iconify/react';
 import eyeFill from '@iconify/icons-eva/eye-fill';
 import eyeOffFill from '@iconify/icons-eva/eye-off-fill';
+
 import {
   Link,
   Stack,
@@ -87,6 +89,7 @@ export default function LoginForm() {
           />
 
           <a href="lost"><small>비밀번호 찾기</small></a>
+          <a href="unregis"><small>회원 탈퇴</small></a>
         </Stack>
 
         <Button
@@ -100,9 +103,10 @@ export default function LoginForm() {
             console.log(`success`)
         }}>
           로그인
-        </Button>
+        </Button>        
       </Form>
     </FormikProvider>
+      
     </div>
   );
 }

@@ -13,10 +13,8 @@ return (
         <Navbar bg="primary" variant="dark" id="centerboxs">
             <Nav className="mr-auto">
             &emsp;<Link className="NavLink" to="/">Home</Link>
-            &emsp;<NavDropdown title="로그인" id="collasible-nav-dropdown" >
-                    <Link className="NavLink2" to="/login">로그인</Link>
-                    <Link className="NavLink2" to="/user">회원가입</Link>
-                </NavDropdown>
+            &emsp;<Link className="NavLink" to="/user">회원가입</Link>
+
             &emsp;<Link className="NavLink" to= "/QnA">QnA</Link>
             &emsp;<NavDropdown title="지도" id="collasible-nav-dropdown">
                     <Link className="NavLink2" to= "/organ/local">국내지도</Link>

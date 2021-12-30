@@ -23,7 +23,7 @@ import {
 
 const StyledTableRow = withStyles(theme=>({
     row: {
-        '&:hover':{backgroundColor: 'rgba(33,150,243,0.5'}
+        '&:hover':{backgroundColor: 'rgba(33,150,243,0.5)'}
     }
 }))(TableRow);
 

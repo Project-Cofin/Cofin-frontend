@@ -12,7 +12,7 @@ export default function EventMarkerContainer({ position, content, id }) {
       <MapMarker
         position={position}
         image={{
-          src: "https://cdn-icons.flaticon.com/png/512/5693/premium/5693879.png?token=exp=1640744153~hmac=76774f525c86ad78ba52b15df00671d5", 
+          src: "https://cdn-icons.flaticon.com/png/512/5693/premium/5693879.png?token=exp=1640851550~hmac=d92d4a2f6e1db4f0774f561ddd44e584", 
           size: {
             width: 45,
             height: 45,

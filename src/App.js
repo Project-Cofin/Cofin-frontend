@@ -7,7 +7,7 @@ import { QnABoardPage, QnAViewPage, QnAWritePage } from 'features/QnA/index';
 
 import MedptPage from "features/medpt/MedptPage";
 import {MsgPage} from "features/message/index";
-import NewsPage from "features/news/NewsPage";
+import {NewsPage} from "features/news/index";
 import {LoginPage, UserPage} from "features/user/index";
 import {ChartPage} from 'features/corona/index';
 import ChatbotPage from 'features/chatbot/pages/ChatbotPage';

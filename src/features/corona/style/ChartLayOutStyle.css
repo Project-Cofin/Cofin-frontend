@@ -40,16 +40,13 @@
 }    
 
 .item11{/*스택차트*/
-    grid-column: 1/ span 2;
+    grid-column: 1/ 6;
+    -ms-grid-column-span: span 6 ;
    
 
 } 
 
-.item12{/*메인차트*/
-    grid-column: 3/ span 2;
-   
 
-}
 
 .ChartFooter {    
     grid-column: 1/6; 

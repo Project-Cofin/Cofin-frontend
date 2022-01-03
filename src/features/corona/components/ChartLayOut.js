@@ -32,7 +32,7 @@ const ChartLayOut = () => {
         <span class ="item11"><StackChart param={Object.keys(week).map(x => {
               return({'label':x, 'value': week[x]*0.01})
           })}/></span>
-        <span class ="item12"><MainChart/></span>
+
         
       <span class="ChartFooter"><Footer/></span>
       </div>

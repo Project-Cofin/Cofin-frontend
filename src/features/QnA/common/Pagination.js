@@ -2,7 +2,7 @@ import React from 'react';
 import _ from 'lodash';
 
 const Pagination = (props) => {
-  const { itemsCount, pageSize, currentPage, onPageChange } = props; // 각각 아이템(영화목록) 개수, 한 페이지에 보여줄 아이템(영화목록) 개수
+  const { itemsCount, pageSize, currentPage, onPageChange } = props; 
 
   const pageCount = Math.ceil(itemsCount / pageSize); // 몇 페이지가 필요한지 계산
   if (pageCount === 1) return null; // 1페이지 뿐이라면 페이지 수를 보여주지 않음

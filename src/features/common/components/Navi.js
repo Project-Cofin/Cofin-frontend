@@ -36,11 +36,3 @@ return (
 
 export default Navi;
 
-
-// const Link =  styled.a`
-//     display: block;
-//     color : #0d6efd;
-//     text-decoration:none;
-//     margin: 5px 0px 5px 10px;
-//     font-weight: bold;
-// `
